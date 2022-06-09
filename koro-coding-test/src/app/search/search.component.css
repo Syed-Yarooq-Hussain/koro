@@ -3,7 +3,7 @@
 }
 
 .search-bar{
-    width: 80%;
+    width: 86%;
     border: 3px solid black;
     border-right: none;
     padding: 4px 16px;
@@ -12,5 +12,25 @@
 
 .search-btn{
     width: auto;
+    height: 38px;
+}
+
+
+
+.image-container{
+    width: 218px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 36px;
+    text-align: center;
+}
+
+.pagination {
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.page-btn {
     height: 32px;
+    margin: 0 16px;
 }

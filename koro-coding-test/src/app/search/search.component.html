@@ -1,14 +1,32 @@
-<div class="main-heading">
-    <h1>DEPARTMENTS</h1>
-</div>
-
 <div>
-    <div class="search-container">
-        <input class="search-bar" type="text" id="search" name="search" placeholder="Search by Name or Api key "
-        [(ngModel)]="search" />
-        <button class="search-btn" type="button" (click)="searchDepartments()">Search</button>
-
+    <div class="main-heading">
+        <h1>Search Image</h1>
     </div>
+    
     <div>
+        <div class="search-container">
+            <input class="search-bar" type="text" id="search" name="search" placeholder="Search any thing here"
+            [(ngModel)]="search" />
+            <button class="search-btn" type="button" (click)="searchPhoto()">Search</button>
+    
+        </div>
+       
+    </div>
+    
+    <div class="row">
+        <ng-container *ngFor="let photo of photo_list;let i=index">
+            
+                <div class="image-container col-sm-4">
+                    <span style="font-size: 18px;"><b>{{(page-1)*10+i+1}}</b></span>
+                    <img src={{photo.urls.small}} width="200" height="200"/>
+                    <p>{{photo.alt_description}}</p>
+                </div>
+        </ng-container>
+    </div>
+    
+    <div class="pagination">
+        <button class="page-btn" type="button" (click)="changePage('prev')" [disabled]="!is_prev"><<</button>
+        {{page}}
+        <button class="page-btn" type="button" (click)="changePage('next')" [disabled]="!is_next">>></button>
     </div>
 </div>
